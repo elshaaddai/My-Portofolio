@@ -1,4 +1,4 @@
-export const skillsData = [
+const skillsData = [
     'HTML',
     'CSS',
     'Javascript',
@@ -8,3 +8,5 @@ export const skillsData = [
     'Git',
     'Figma',
 ]
+
+export default skillsData;

@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { UilArrowDown } from '@iconscout/react-unicons';
+
 
 const ScrollDown = () => {
   return (
@@ -25,10 +27,11 @@ const ScrollDown = () => {
                   d="M123.359,79.775l0,72.843"
                   style={{
                     fill: "none",
-                    stroke: "var(--title-color)",
+                    stroke: "#333", 
                     strokeWidth: "20px",
                   }}
                 ></path>
+
                 <path
                   id="mouse"
                   d="M236.717,123.359c0,-62.565 -50.794,-113.359 -113.358,-113.359c-62.565,0 -113.359,50.794 -113.359,113.359l0,143.237c0,62.565 50.794,113.359 113.359,113.359c62.564,0 113.358,-50.794 113.358,-113.359l0,-143.237Z"
@@ -40,7 +43,7 @@ const ScrollDown = () => {
                 ></path>
         </svg>
         <span className="home_scroll-name">Scroll Down</span>
-        <i className="uil uil-arrow-down home_scroll-arrow"></i>
+        <UilArrowDown className="uil uil-arrow-down home_scroll-arrow"></UilArrowDown>
         </a>
     </div>
   )

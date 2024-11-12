@@ -9,7 +9,7 @@ import mysql from '/public/svg/skills/mysql.svg';
 import python from '/public/svg/skills/python.svg';
 
 
-export const skillsImage = (skill) => {
+const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
   switch (skillID) {
     case 'html':
@@ -36,3 +36,4 @@ export const skillsImage = (skill) => {
       break;
   }
 }
+export default skillsImage;
