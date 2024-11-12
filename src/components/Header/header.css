@@ -15,6 +15,17 @@ nav {
     background-color: rgba(0, 0, 0, 0.434);
 }
 
+.Nav_Menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.Nav_Menu.show-menu{
+    display: block;
+}
+
+
+
 .logo {
     font-family: Arial, Helvetica, sans-serif;
     color: #dc428fcd;

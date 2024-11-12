@@ -15,9 +15,6 @@ const Home = () => {
             <Intro />
 
                 <div className="home_img"></div>
-
-
-
             </div>
         </div>
     </section>

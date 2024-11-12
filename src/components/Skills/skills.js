@@ -11,7 +11,6 @@ const Frontend = () => {
     { name: 'Figma', percentage: 70 },
     { name: 'Canva', percentage: 90 },
     { name: 'Rapid Miner', percentage: 60 },
-    { name: 'Enterprise Architec', percentage: 70},
     { name: 'Virtual Box', percentage: 70},
     { name: 'Linux' , percentage: 75}
   ];

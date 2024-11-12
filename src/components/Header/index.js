@@ -1,16 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./header.css"
 
 const Header = () => {
-    window.addEventListener("scroll", function() {
-        const header = this.document.querySelector(".header");
-        if(this.scrollY >= 80) header.classList.add("scroll-header");
-        else header.classList.remove("scroll-header");
-    });
 
     const [Toggle, showMenu] = useState(false);
     const [activeNav, setActiveNav] = useState("#home");
     
+    useEffect(() => {
+        const handleScroll = () => {
+            const header = document.querySelector(".header");
+            if (window.scrollY >= 80) header.classList.add("scroll-header");
+            else header.classList.remove("scroll-header");
+        };
+        window.addEventListener("scroll", handleScroll);
+        
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return (
         <header className='header'>
             <nav className='nav container'>
@@ -18,7 +25,9 @@ const Header = () => {
                 <div className={Toggle ? "Nav_Menu show-menu":"Nav_Menu"}>
                     <ul className='list'>
                         <li className='nav_item'>
-                            <a href='#home' onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "Nav_link active-link" : "nav_link"}>
+                            <a 
+                            href='#home' 
+                            onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "Nav_link active-link" : "nav_link"}>
                                 <i className='uil uil-estate nav_icon'></i> Home
                             </a>
                         </li>
