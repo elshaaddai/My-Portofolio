@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .home_content {
@@ -11,6 +10,7 @@
     align-items: center;
     gap: 30px;
     padding-top: 8.9rem;
+    padding-bottom: 9rem;
 }
 
 .home_data{
@@ -21,12 +21,13 @@
     margin-left: 50px;
 }
 .home_title {
-
+    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: var(--mb-0-25);
     font-size: 35px;
 }
 
 .home_subtitle {
+    font-family: Arial, Helvetica, sans-serif;
     position: relative;
     font-size: var(--h3-font-size);
     padding-left: 5.5rem;
@@ -46,8 +47,8 @@
 .home-social_icon{
     margin-bottom: 10px;
     background-repeat: no-repeat;
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     display: inline-block;
     background-size: contain;
     transition: transform 0.3s ease, filter 0.3s ease; 

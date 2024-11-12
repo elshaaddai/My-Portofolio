@@ -16,20 +16,19 @@ nav {
 }
 
 .logo {
-    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #dc428fcd;
     text-decoration: none;
     font-size: 16px;
     letter-spacing: 3px;
 }
-/* .nav_toggle{
-    color: var(--title-color);
-    font-weight: var(--font-medium); 
-} */
 
 .list{
     display: flex;
-    column-gap: 2rem;
+    column-gap: 4rem;
     list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-right: 50px;
 }
 
 .nav_link{
@@ -42,7 +41,7 @@ nav {
 }
 .active-link,
 .nav_link:hover {
-    color: rgba(62, 20, 137, 0.779);
+    color: #dc428fcd;
 }
 
 .nav_icon,
@@ -55,20 +54,6 @@ nav {
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
-@media screen and (max-width: 768px) {
-    .header {
-        /* top: initial; */
-        bottom: 0;
-    }
-    .Nav_Menu {
-        left: 0;
-        width: 100%;
-        padding: 1rem 1rem 1rem;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-        border-radius: 1.5rem 1.5rem 0 0;
-        transition: .3s;
-    }
-}
 .show-menu {
     bottom: 0;
 }
@@ -89,15 +74,4 @@ nav {
 .nav_toggle {
     font-size: 1.1rem;
     cursor: pointer;
-}
-
-
-@media screen and (max-width: 350px) {
-    .nav_menu {
-        padding: 2rem 0.25rem 4rem;
-    }
-
-    .nav_list {
-        column-gap: 0;
-    }
 }
