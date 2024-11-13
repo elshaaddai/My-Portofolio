@@ -14,7 +14,7 @@ const Home = () => {
             <Social />
             <Intro />
 
-                <div className="home_img"></div>
+
             </div>
         </div>
     </section>
