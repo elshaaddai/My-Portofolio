@@ -83,3 +83,11 @@
     color: #555;
     margin: 0;
 }
+
+
+.icon-linkedin{
+    background-image: url(../../assets/linkedin.png);
+}
+.icon-github{
+    background-image: url(../../assets/github.png);
+}
