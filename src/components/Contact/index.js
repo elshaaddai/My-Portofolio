@@ -6,26 +6,24 @@ function Contact() {
         <h2 className="section_title">CONTACT</h2>
         <h2 className="section_subtitle">My Contact</h2>
         
-      <div >
         <div className="social">
-          <div>
-            <p>
-              <a href='elshatambuwun20@gmail.com'>elshatambuwun20@gmail.com</a>
-            </p>
-            <p>
-              <a href="https://maps.app.goo.gl/etvRrPhuVx1Z5yiU6 ">Tugu Tani Sonder Minahasa</a>
-            </p>
+          <div className='contact_item'>
+            <a href='elshatambuwun20@gmail.com' className='icon-email contact_social-icon'></a>
+            <p className='contact_text'>elshatambuwun20@gmail.com</p>
           </div>
-          <div>
-            <p>
-                <a href="https://github.com/elshaaddai" target="_blank" rel="noopener noreferrer">Github</a>
-            </p>
-            <p>
-                <a href="'https://www.linkedin.com/in/elshaddai-grace-tambuwun-355899304/'" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </p>
+          
+          <div className='contact_item'>
+            <a href='https://github.com/elshaaddai' className='icon-github contact_social-icon'></a>
+            <p className='contact_text'>Github</p>
           </div>
+
+          <div className='contact_item'>
+            <a href='https://www.linkedin.com/in/elshaddai-grace-tambuwun-355899304/' className='icon-linkedin contact_social-icon'></a>
+            <p className='contact_text'>LinkedIn</p>
+          </div>
+
+
         </div>
-      </div>
     </div>
   );
 };

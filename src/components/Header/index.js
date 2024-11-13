@@ -1,63 +1,84 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useRef} from 'react';
 import "./header.css"
 
 const Header = () => {
 
     const [Toggle, showMenu] = useState(false);
     const [activeNav, setActiveNav] = useState("#home");
+
+    const aboutRef = useRef(null);
+    const homeRef = useRef(null);
+    const skillsRef = useRef(null);
+    const projectRef = useRef(null);
+    const contactRef = useRef(null);
     
-    useEffect(() => {
-        const handleScroll = () => {
-            const header = document.querySelector(".header");
-            if (window.scrollY >= 80) header.classList.add("scroll-header");
-            else header.classList.remove("scroll-header");
-        };
-        window.addEventListener("scroll", handleScroll);
-        
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    const scrollToSection = (sectionRef) => {
+        if (sectionRef && sectionRef.current) {
+                sectionRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
-        <header className='header'>
+        <header className='header fade-in-text'>
             <nav className='nav container'>
                 <a href='index.html' className='logo'><h4>Elsha Tambuwun</h4></a>
-                <div className={Toggle ? "Nav_Menu show-menu":"Nav_Menu"}>
+                <div className={`Nav_Menu ${Toggle ? "active" : ""}`}>
                     <ul className='list'>
                         <li className='nav_item'>
                             <a 
                             href='#home' 
-                            onClick={() => setActiveNav("#home")} className={activeNav === "#home" ? "Nav_link active-link" : "nav_link"}>
-                                <i className='uil uil-estate nav_icon'></i> Home
+                            onClick={() => {
+                                setActiveNav("#home")
+                                scrollToSection(homeRef);
+                            }}
+                            className={activeNav === "#home" ? "Nav_link active-link" : "nav_link"}>
+                                <i className='uil uil-estate'></i> Home
                             </a>
                         </li>
 
                         <li className='nav_item'>
-                            <a href='#about' onClick={() => setActiveNav("#about")} className={activeNav === "#about" ? "Nav_link active-link" : "nav_link"}>
-                                <i className='uil uil-estate nav_icon'></i> About
+                            <a href='#about' onClick={() => {
+                                setActiveNav("#about")
+                                scrollToSection(aboutRef);
+                            }}
+                                className={activeNav === "#about" ? "Nav_link active-link" : "nav_link"}>
+                                <i className='uil uil-estate'></i> About
                             </a>
                         </li>
 
                         <li className='nav_item'>
-                            <a href='#skills' onClick={() => setActiveNav("#skills")} className={activeNav === "#skills" ? "Nav_link active-link" : "nav_link"}>
-                                <i className='uil uil-estate nav_icon'></i> Skills
+                            <a href='#skills' onClick={() => {
+                                setActiveNav("#skills")
+                                scrollToSection(skillsRef);
+                            }} 
+                                className={activeNav === "#skills" ? "Nav_link active-link" : "nav_link"}>
+                                <i className='uil uil-estate'></i> Skills
                             </a>
                         </li>
 
                         <li className='nav_item'>
-                            <a href='#project' onClick={() => setActiveNav("#project")} className={activeNav === "#project" ? "Nav_link active-link" : "nav_link"}>
-                                <i className='uil uil-estate nav_icon'></i> Project
+                            <a href='#project' onClick={() => {
+                                setActiveNav("#project")
+                                scrollToSection(projectRef);
+                            }} 
+                                
+                                className={activeNav === "#project" ? "Nav_link active-link" : "nav_link"}>
+                                <i className='uil uil-estate'></i> Project
                             </a>
                         </li>
 
                         <li className='nav_item'>
-                            <a href='#contact' onClick={() => setActiveNav("#contact")} className={activeNav === "#contact" ? "Nav_link active-link" : "nav_link"}>
+                            <a href='#contact' onClick={() => {
+                                setActiveNav("#contact")
+                                scrollToSection(contactRef);
+                            }} 
+                                className={activeNav === "#contact" ? "Nav_link active-link" : "nav_link"}>
                                 <i className='uil uil-estate nav_icon'></i> Contact
                             </a>
                         </li>
                     </ul>
 
-                    <i className='uil uil-times nav_close' onClick={() => showMenu(!Toggle)}></i>
+                    <i className='uil uil-times' onClick={() => showMenu(!Toggle)}></i>
                 </div>
 
                 <div className='nav_toggle' onClick={() => showMenu(!Toggle)}>
