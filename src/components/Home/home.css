@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .home_content {
@@ -13,13 +14,24 @@
     padding-bottom: 9rem;
 }
 
-.home_data{
+.home_social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 50px;
+}
+
+
+.home_data {
     place-items: center;
     text-align: center;
     padding-left: 10px;
     justify-content: center;
     margin-left: 50px;
+    flex: 1;
 }
+
+
 .home_title {
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: var(--mb-0-25);
@@ -31,24 +43,17 @@
     position: relative;
     font-size: var(--h3-font-size);
     padding-left: 5.5rem;
+    margin-bottom: 20px;
 }
-
-
-
-
 
 .home_description {
     max-width: 400px;
     margin-bottom: var(--mb-3);
+    margin: 0 auto;
 }
 
-.home_social {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 180px;
-}
-.home-social_icon{
+
+.home-social_icon {
     margin-bottom: 10px;
     background-repeat: no-repeat;
     width: 20px;
@@ -57,24 +62,24 @@
     background-size: contain;
     transition: transform 0.3s ease, filter 0.3s ease; 
 }
-.icon-instagram{
+
+.icon-instagram {
     background-image: url(../../assets/instagram.png);
 }
-.icon-linkedin{
+.icon-linkedin {
     background-image: url(../../assets/linkedin.png);
 }
-.icon-github{
+.icon-github {
     background-image: url(../../assets/github.png);
 }
+
 .icon-instagram:hover,
 .icon-linkedin:hover,
 .icon-github:hover{
     filter: brightness(0) saturate(100%) invert(34%) sepia(82%) saturate(3126%) hue-rotate(301deg) brightness(94%) contrast(101%);
 }
 
-
 .home_img {
-    background: url(../../assets/elsha.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -84,9 +89,8 @@
     margin-left: 30px;
     width: 300px;
     height: 300px;
-    animation: profile_animate 8s ease-in-out infinite 1s;
+    animation: profile_animate 8s ease-in-out infinite 1s
 }
-
 @keyframes profile_animate {
     0% {
         border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
