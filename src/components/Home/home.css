@@ -63,15 +63,6 @@
     transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
-.icon-instagram {
-    background-image: url(../../assets/instagram.png);
-}
-.icon-linkedin {
-    background-image: url(../../assets/linkedin.png);
-}
-.icon-github {
-    background-image: url(../../assets/github.png);
-}
 
 .icon-instagram:hover,
 .icon-linkedin:hover,
