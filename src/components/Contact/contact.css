@@ -41,7 +41,7 @@
     display: inline-block;
     background-repeat: no-repeat;
 }
-.icon-email{
+/* .icon-email{
     background-image: url(../../assets/email.png);
 }
 .icon-gituhub{
@@ -49,7 +49,7 @@
 }
 .icon-linkedin{
     background-image: url(../../assets/linkedin.png);
-}
+} */
 
 .contact_text {
     margin-top: 8px;

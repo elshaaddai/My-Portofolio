@@ -12,6 +12,7 @@ const Home = () => {
   const [igImg, setIgImg] = useState("")
   const [linkedin, setLinkedInImg] = useState("")
   const [github, setGithubImg] = useState("")
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const homeRef = ref(database, 'Home');
@@ -40,10 +41,13 @@ const Home = () => {
             }
         }
     });
+    setTimeout(() => setVisible(true), 2000); 
 }, []);
+
+
   return (
     <section className="home section" id="home">
-        <div className="home_container container grid">
+        <div className={`home_container container grid ${visible ? "visible" : ""}`}>
             <div className="home_content grid">
               <div className="home_social">
                 <a 

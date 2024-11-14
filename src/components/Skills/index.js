@@ -1,5 +1,5 @@
 import React from 'react';
-import Frontend from './skills';
+import MySkills from './skills';
 import './skills.css'
 
 const Skills = () => {
@@ -9,10 +9,10 @@ const Skills = () => {
       <h3 className="section_subtitle">My Skills</h3>
 
       <div className="skills_container">
-        <Frontend />
+        <MySkills />
       </div>
     </section>
   )
 }
 
-export default Skills
+export default Skills;

@@ -95,3 +95,18 @@
         border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     }
 }
+
+.home_title, .home_subtitle, .home_description, .home_img {
+    opacity: 0;               /* Mulai dengan tidak terlihat */
+    transform: translateY(20px); /* Menggeser sedikit ke bawah */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Durasi dan efek transisi */
+}
+
+
+.home_container.visible .home_title,
+.home_container.visible .home_subtitle,
+.home_container.visible .home_description,
+.home_container.visible .home_img {
+    opacity: 1;               /* Jadikan elemen terlihat */
+    transform: translateY(0); /* Kembalikan ke posisi semula */
+}

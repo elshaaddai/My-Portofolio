@@ -4,13 +4,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    
-    /* column-width: 15em;
-    -moz-column-width: 15em;
-    -webkit-column-width: 15em;
-    column-gap: 4rem;
-    -moz-column-gap: 4rem;
-    -webkit-column-gap: 4rem; */
 }
 
 .po_item {

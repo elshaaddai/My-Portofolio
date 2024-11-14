@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Frontend = () => {
+const MySkills = () => {
   const skills = [
     { name: 'HTML', percentage: 80 },
     { name: 'CSS', percentage: 80 },
@@ -40,4 +40,4 @@ const Frontend = () => {
   );
 };
 
-export default Frontend;
+export default MySkills;
