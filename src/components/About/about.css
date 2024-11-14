@@ -28,13 +28,11 @@
 }
 
 .about_img {
-    background-image: url(../../assets/elsha2.jpg);
+    max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
     background-repeat: no-repeat;
-    width: 850px;
-    height: 296px;
-    display: inline-block;
-    background-size: contain;
+    background-size: cover;
     border-radius: 1.5rem;
     justify-self: center;
     box-shadow: 0 4px 8px rgb(255, 92, 176);
@@ -65,7 +63,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #060505;
     margin-bottom: 15px;
 }
 
@@ -74,7 +72,7 @@
     flex-direction: column;
     align-items: center;
     font-size: 18px;
-    color: #333;
+    color: #0f0d0d;
 
 }
 
@@ -82,12 +80,4 @@
     font-weight: 500;
     color: #555;
     margin: 0;
-}
-
-
-.icon-linkedin{
-    background-image: url(../../assets/linkedin.png);
-}
-.icon-github{
-    background-image: url(../../assets/github.png);
 }

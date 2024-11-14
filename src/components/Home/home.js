@@ -18,7 +18,7 @@ const Home = () => {
     onValue(homeRef, (snapshot) => {
         const data = snapshot.val();
         console.log("Data fetched from Firebase:", data);
-        console.log("GitHub image data:", data.githubImg);
+        console.log("GitHub image data:", data.gihubImg);
 
 
         if (data) {
@@ -35,8 +35,8 @@ const Home = () => {
             if (data.linkedinImg){
               setLinkedInImg(`data:image/png;base64,${data.linkedinImg}`)
             }
-            if (data.githubImg) {
-              setGithubImg(`data:image/jpeg;base64,${data.githubImg}`);
+            if (data.gihubImg) {
+              setGithubImg(`data:image/jpeg;base64,${data.gihubImg}`);
             }
         }
     });
