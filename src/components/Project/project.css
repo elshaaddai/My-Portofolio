@@ -1,9 +1,9 @@
 .po_items_ho {
-        column-width: 15em;
-        column-gap: 4rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem; 
 }
 
 .po_item {
@@ -12,66 +12,44 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 15em; 
-    max-width: 100%; 
-    margin: 0.5rem auto;
-    position: relative;
-    background: var(--secondary-color);
-    padding: 6px;
+    width: 18em; 
+    height: 280px; 
+    margin: 0.5rem;
+    padding: 8px;
     border: 1px solid var(--secondary-color);
+    background: var(--secondary-color);
     transition: 0.3s ease;
-    min-height: 300px;
+    overflow: hidden; 
+    box-sizing: border-box;
+
 }
 
 .po_item img {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+    max-width: none; 
+    max-height: none; 
+}
+
+.po_item:hover img {
+    transform: scale(1.05); 
 }
 
 .po_item .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    transform: translate( 1%, 1%);
-    background: var(--overlay-color);
-    z-index: 1;
-    transition: 0.3s ease-in-out;
-    opacity: 0;
+    margin-top: 1rem; 
+    padding: 0.5rem;
     border: 1px solid black;
-}
-
-.po_item .content {
+    background: var(--overlay-color);
     opacity: 0;
-    transition-delay: 1s;
-    transition: 0.3s ease;
+    transition: opacity 0.3s ease-in-out;
     font-size: 20px;
 }
 
-.po_item:hover {
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);
-}
-
-.po_item:hover .content {
-    height: calc(100% - 30px);
-    width: calc(100% - 30px);
-    opacity: 1;
-}
-
 .po_item:hover .content {
     opacity: 1;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
     color: var(--secondary-color);
-}
-
-.po_item .content a {
-    background: var(--bg-color);
-    border: solid 1px var(--text-color);
-    padding: 4px 8px;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.po_item .content a:hover {
-    text-decoration: none;
 }
