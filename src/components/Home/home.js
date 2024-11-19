@@ -1,7 +1,7 @@
-import "./home.css"
-import { database } from '../config/firebase/index';
-import { ref, onValue } from "firebase/database";
 import React, { useEffect, useState } from 'react';
+import { database } from '../../firebase/index';
+import { ref, onValue } from "firebase/database";
+import Loading from "../Loading/index";
 
 
 const Home = () => {
@@ -13,13 +13,13 @@ const Home = () => {
   const [linkedin, setLinkedInImg] = useState("")
   const [github, setGithubImg] = useState("")
   const [visible, setVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const homeRef = ref(database, 'Home');
-    onValue(homeRef, (snapshot) => {
-        const data = snapshot.val();
-        console.log("Data fetched from Firebase:", data);
-        console.log("GitHub image data:", data.gihubImg);
+
+    const unsubscribe = onValue(homeRef, (snapshot) => {
+      const data = snapshot.val();
 
 
         if (data) {
@@ -41,20 +41,33 @@ const Home = () => {
             }
         }
     });
-    setTimeout(() => setVisible(true), 2000); 
-}, []);
+      const timer = setTimeout(() => {
+          setIsLoading(false);
+          setVisible(true);
+      }, 1000);
+
+      return () => {
+        unsubscribe();
+        clearTimeout(timer);
+      }
+  },[]);
+    
+
+    if (isLoading) {
+      return <Loading />
+    }
+
 
 
   return (
     <section className="home section" id="home">
-        <div className={`home_container container grid ${visible ? "visible" : ""}`}>
-            <div className="home_content grid">
+        <div className={`home_container ${visible ? "visible" : ""}`}>
+            <div className="home_content">
               <div className="home_social">
                 <a 
                 href="https://www.instagram.com/elshaa.tambuwun/#" 
                 className="home-social_icon icon-instagram" 
                 target="_blank" 
-                rel="noopener noreferrer"
                 style={{ backgroundImage: `url(${igImg})` }}>
                 </a>
 
@@ -62,7 +75,6 @@ const Home = () => {
                 href="https://www.linkedin.com/in/elshaddai-grace-tambuwun-355899304/" 
                 className="home-social_icon icon-linkedin" 
                 target="_blank" 
-                rel="noopener noreferrer"
                 style={{ backgroundImage: `url(${linkedin})` }}>
                 </a>
 
@@ -70,7 +82,6 @@ const Home = () => {
                 href="https://github.com/elshaaddai" 
                 className="home-social_icon icon-github" 
                 target="_blank" 
-                rel="noopener noreferrer"
                 style={{ backgroundImage: `url(${github})` }}>
                 </a>
               </div>

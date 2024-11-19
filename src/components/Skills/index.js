@@ -1,6 +1,5 @@
 import React from 'react';
 import MySkills from './skills';
-import './skills.css'
 
 const Skills = () => {
   return (

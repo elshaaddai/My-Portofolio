@@ -2,8 +2,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { ref, onValue } from "firebase/database";
-import { database } from "../config/firebase/index";
-import '../Project/project.css'
+import { database } from "../../firebase";
 
 const Project = () => {
   const [portfolioData, setPortfolioData] = useState([]);

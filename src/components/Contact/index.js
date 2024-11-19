@@ -1,5 +1,4 @@
-import './contact.css'
-import { database } from '../config/firebase/index';
+import { database } from '../../firebase';
 import { ref, onValue } from "firebase/database";
 import React, { useEffect, useState } from 'react';
 
@@ -20,8 +19,6 @@ function Contact() {
     const contactRef = ref(database, 'Contact');
     onValue(contactRef, (snapshot) => {
         const data = snapshot.val();
-        console.log("Data fetched from Firebase:", data);
-        console.log("GitHub image data:", data.gihubImg);
 
 
         if (data) {
@@ -58,13 +55,13 @@ function Contact() {
 
   return (
     <div id="contact">
-        <h2 className="section_title">{contactTitle}</h2>
+        {/* <h2 className="section_title">{contactTitle}</h2> */}
         <h2 className="section_subtitle">{contactSubtitle}</h2>
         
         <div className="social">
           <div className='contact_item'>
             <a 
-            href='elshatambuwun20@gmail.com' 
+            href='https://mail.google.com/mail/u/0/#inbox' 
             className='icon-email contact_social-icon' 
             target='_blank'
             style={{ backgroundImage: `url(${emailImg})` }}
